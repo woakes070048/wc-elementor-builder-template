@@ -158,24 +158,13 @@ class Widget_MyAccount_Addresses extends Widget_Base
 				'name' => 'column_border',
 				'selector' => '
 						{{WRAPPER}} .u-columns .woocommerce-Address',
-				'exclude' => ['color'],
 			]
 		);
-		$this->add_control(
-			'column_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'
-						{{WRAPPER}} .u-columns .woocommerce-Address' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
+		
 		$this->add_control(
 			'column_border_radius',
 			[
-				'label' => esc_html__('Border Radius', 'webt'),
+				'label' => esc_html__('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [

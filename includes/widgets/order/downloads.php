@@ -52,14 +52,14 @@ class Widget_MyAccount_Downloads extends Widget_Base
 	{
 		return ['webt-myaccount'];
 	}
-	
-    /**
-     * Search keywords
-     */
-    public function get_keywords()
-    {
-        return ['webt', 'woocommerce', 'download', 'myaccount'];
-    }
+
+	/**
+	 * Search keywords
+	 */
+	public function get_keywords()
+	{
+		return ['webt', 'woocommerce', 'download', 'myaccount'];
+	}
 
 	/**
 	 * Register oEmbed widget controls.
@@ -167,18 +167,6 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			[
 				'name' => 'message_title_border',
 				'selector' => '{{WRAPPER}} .woocommerce-notice .woocommerce-downloads-pending__title',
-				'exclude' => ['color'],
-			]
-		);
-
-		$this->add_control(
-			'message_title_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .woocommerce-notice .woocommerce-downloads-pending__title' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -258,18 +246,6 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			[
 				'name' => 'message_border',
 				'selector' => '{{WRAPPER}} .woocommerce-notice .woocommerce-downloads-pending',
-				'exclude' => ['color'],
-			]
-		);
-
-		$this->add_control(
-			'message_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .woocommerce-notice .woocommerce-downloads-pending' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -347,18 +323,6 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			[
 				'name' => 'heading_border',
 				'selector' => '{{WRAPPER}} .woocommerce-table--order-downloads thead th',
-				'exclude' => ['color'],
-			]
-		);
-
-		$this->add_control(
-			'heading_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .woocommerce-table--order-downloads thead th' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -416,17 +380,6 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			[
 				'name' => 'table_border',
 				'selector' => '{{WRAPPER}} tbody tr td',
-				'exclude' => ['color'],
-			]
-		);
-		$this->add_control(
-			'table_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} tbody tr td' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 		$this->add_responsive_control(
@@ -436,7 +389,7 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em'],
 				'selectors' => [
-					'{{WRAPPER}} tbody tr td td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} tbody tr td' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -462,7 +415,7 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				'prefix_class' => 'elementor%s-align-',
 				'default'      => '',
 				'selectors' => [
-					'{{WRAPPER}} tbody tr td td' => 'text-align: {{VALUE}}',
+					'{{WRAPPER}} tbody tr td' => 'text-align: {{VALUE}}',
 				],
 			]
 		);
@@ -495,6 +448,17 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'product_name_padding',
+			[
+				'label' => esc_html__('Padding', 'elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em'],
+				'selectors' => [
+					'{{WRAPPER}} tbody tr td.download-product' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 		$this->end_controls_section();
 
 		/* --------------------------- Downloads remaining -------------------------- */
@@ -521,6 +485,17 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .download-remaining' => 'color: {{VALUE}}',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'download_remaining_padding',
+			[
+				'label' => esc_html__('Padding', 'elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em'],
+				'selectors' => [
+					'{{WRAPPER}} tbody tr td.download-remaining' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				],
 			]
 		);
@@ -553,6 +528,17 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				],
 			]
 		);
+		$this->add_responsive_control(
+			'expires_padding',
+			[
+				'label' => esc_html__('Padding', 'elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em'],
+				'selectors' => [
+					'{{WRAPPER}} tbody tr td.download-expires' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 		$this->end_controls_section();
 
 		/* --------------------------- Download-file style -------------------------- */
@@ -571,25 +557,6 @@ class Widget_MyAccount_Downloads extends Widget_Base
 				'label'     => esc_html__('Typography', 'elementor'),
 				'selector'  => '{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file',
 			)
-		);
-		$this->add_group_control(
-			Group_Control_Border::get_type(),
-			[
-				'name' => 'download_file_button_border',
-				'selector' => '{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file',
-				'exclude' => ['color'],
-			]
-		);
-		$this->add_responsive_control(
-			'download_file_button_padding',
-			[
-				'label' => esc_html__('Padding', 'elementor'),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => ['px', 'em'],
-				'selectors' => [
-					'{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
 		);
 		//Tabs
 		$this->start_controls_tabs('download_file_button_style_tabs');
@@ -623,21 +590,18 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'download_file_button_border_color',
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
 			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file' => 'border-color: {{VALUE}}',
-				],
+				'name' => 'download_file_button_border',
+				'selector' => '{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file',
 			]
 		);
 
 		$this->add_control(
 			'download_file_button_radius',
 			[
-				'label' => esc_html__('Border Radius', 'webt'),
+				'label' => esc_html__('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [
@@ -677,21 +641,18 @@ class Widget_MyAccount_Downloads extends Widget_Base
 			]
 		);
 
-		$this->add_control(
-			'download_file_button_border_color_hover',
+		$this->add_group_control(
+			Group_Control_Border::get_type(),
 			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file:hover' => 'border-color: {{VALUE}}',
-				],
+				'name' => 'download_file_button_border_hover',
+				'selector' => '{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file:hover',
 			]
 		);
 
 		$this->add_control(
 			'download_file_button_radius_hover',
 			[
-				'label' => esc_html__('Border Radius', 'webt'),
+				'label' => esc_html__('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [
@@ -723,6 +684,28 @@ class Widget_MyAccount_Downloads extends Widget_Base
 		$this->end_controls_tab();
 
 		$this->end_controls_tabs();
+		$this->add_responsive_control(
+			'download_file_button_padding',
+			[
+				'label' => esc_html__('Buton Padding', 'elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em'],
+				'selectors' => [
+					'{{WRAPPER}} .download-file a.woocommerce-MyAccount-downloads-file' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
+		$this->add_responsive_control(
+			'download_file_padding',
+			[
+				'label' => esc_html__('Padding', 'elementor'),
+				'type' => Controls_Manager::DIMENSIONS,
+				'size_units' => ['px', 'em'],
+				'selectors' => [
+					'{{WRAPPER}} tbody tr td.download-file' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				],
+			]
+		);
 		$this->end_controls_section();
 	}
 
@@ -761,4 +744,4 @@ class Widget_MyAccount_Downloads extends Widget_Base
 	}
 }
 
-Plugin::elementor_instance()->widgets_manager->register_widget_type(new Widget_MyAccount_Downloads ());
+Plugin::elementor_instance()->widgets_manager->register_widget_type(new Widget_MyAccount_Downloads());

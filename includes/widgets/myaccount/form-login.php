@@ -349,7 +349,7 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 		$this->add_responsive_control(
 			'form_border_radius',
 			[
-				'label' => esc_html__('Border Radius', 'elementor'),
+				'label' => esc_html__('Radius', 'elementor'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', 'em'],
 				'selectors' => [
@@ -500,18 +500,6 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 			[
 				'name' => 'input_border',
 				'selector' => '{{WRAPPER}} .webt-account-form-login form.woocommerce-form-login input.input-text',
-				'exclude' => ['color'],
-			]
-		);
-
-		$this->add_control(
-			'input_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .webt-account-form-login form.woocommerce-form-login input.input-text' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -529,7 +517,7 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 		$this->add_control(
 			'input_border_radius',
 			[
-				'label' => esc_html__('Border Radius', 'webt'),
+				'label' => esc_html__('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [
@@ -569,18 +557,6 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 			[
 				'name' => 'input_focus_border',
 				'selector' => '{{WRAPPER}} .webt-account-form-login form.woocommerce-form-login input.input-text:focus',
-				'exclude' => ['color'],
-			]
-		);
-
-		$this->add_control(
-			'input_focus_border_color',
-			[
-				'label' => esc_html__('Border Color', 'webt'),
-				'type' => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .webt-account-form-login form.woocommerce-form-login input.input-text:focus' => 'border-color: {{VALUE}}',
-				],
 			]
 		);
 
@@ -598,7 +574,7 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 		$this->add_control(
 			'input_focus_border_radius',
 			[
-				'label' => esc_html__('Border Radius', 'webt'),
+				'label' => esc_html__('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [
@@ -690,7 +666,7 @@ class Widget_MyAccount_Form_Login extends Widget_Base
 		$this->add_control(
 			'button_border_radius',
 			[
-				'label' => __('Border Radius', 'webt'),
+				'label' => __('Radius', 'webt'),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => ['px', '%'],
 				'selectors' => [

@@ -55,13 +55,13 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
         return ['webt-checkout'];
     }
 
-	/**
-	 * Search keywords
-	 */
-	public function get_keywords()
-	{
-		return ['webt', 'woocommerce', 'checkout', 'coupon', 'form'];
-	}
+    /**
+     * Search keywords
+     */
+    public function get_keywords()
+    {
+        return ['webt', 'woocommerce', 'checkout', 'coupon', 'form'];
+    }
 
     /**
      * Register oEmbed widget controls.
@@ -338,7 +338,7 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
         $this->add_control(
             'coupon_input_border_radius',
             [
-                'label' => __('Border Radius', 'webt'),
+                'label' => __('Radius', 'webt'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -385,22 +385,19 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
                 ],
             ]
         );
-
-        $this->add_control(
-            'coupon_input_hover_border_color',
+        
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
             [
-                'label' => __('Border Color', 'webt'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .coupon input.input-text:hover' => 'border-color: {{VALUE}}',
-                ],
+                'name' => 'cart_total_checkout_button_border_hover',
+                'selector' => '{{WRAPPER}} .coupon input.input-text:hover',
             ]
         );
 
         $this->add_control(
             'coupon_input_hover_border_radius',
             [
-                'label' => __('Border Radius', 'webt'),
+                'label' => __('Radius', 'webt'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -484,7 +481,7 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
         $this->add_control(
             'coupon_button_border_radius',
             [
-                'label' => __('Border Radius', 'webt'),
+                'label' => __('Radius', 'webt'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -584,21 +581,19 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'coupon_button_hover_border_color',
+        $this->add_group_control(
+            Group_Control_Border::get_type(),
             [
-                'label' => __('Border Color', 'webt'),
-                'type' => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .coupon input.is-form.expand:hover' => 'border-color: {{VALUE}}',
-                ],
+                'name' => 'coupon_button_border_hover',
+                'label' => __('Border', 'webt'),
+                'selector' => '{{WRAPPER}} .coupon input.is-form.expand:hover',
             ]
         );
 
         $this->add_control(
             'coupon_button_hover_border_radius',
             [
-                'label' => __('Border Radius', 'webt'),
+                'label' => __('Radius', 'webt'),
                 'type' => Controls_Manager::DIMENSIONS,
                 'size_units' => ['px', '%'],
                 'selectors' => [
@@ -667,4 +662,4 @@ class Widget_Checkout_Coupon_Form extends Widget_Base
     }
 }
 
-Plugin::elementor_instance()->widgets_manager->register_widget_type(new Widget_Checkout_Coupon_Form ());
+Plugin::elementor_instance()->widgets_manager->register_widget_type(new Widget_Checkout_Coupon_Form());

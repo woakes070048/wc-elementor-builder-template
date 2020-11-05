@@ -30,8 +30,6 @@ if (!class_exists('Widgets_Registered')) {
         {
             if (class_exists('woocommerce')) {
                 /*My Account*/
-                require_once(dirname(__FILE__) . '/myaccount/login.php');
-                require_once(dirname(__FILE__) . '/myaccount/register.php');
                 require_once(dirname(__FILE__) . '/myaccount/form-login.php');
                 require_once(dirname(__FILE__) . '/myaccount/form-register.php');
                 require_once(dirname(__FILE__) . '/myaccount/form-edit-account.php');
@@ -50,7 +48,9 @@ if (!class_exists('Widgets_Registered')) {
                 require_once(dirname(__FILE__) . '/order/downloads.php');
                 require_once(dirname(__FILE__) . '/order/review-order.php');
                 require_once(dirname(__FILE__) . '/order/order-details.php');
+                require_once(dirname(__FILE__) . '/order/order-updates.php');
                 require_once(dirname(__FILE__) . '/order/order-received.php');
+                require_once(dirname(__FILE__) . '/order/order-details-mark.php');
                 require_once(dirname(__FILE__) . '/order/order-customer-details.php');
 
                 /*Checkout*/
@@ -72,7 +72,6 @@ if (!class_exists('Widgets_Registered')) {
                 /*Global*/
                 require_once(dirname(__FILE__) . '/global/custom-hook.php');
                 require_once(dirname(__FILE__) . '/global/print-notices.php');
-                require_once(dirname(__FILE__) . '/global/wc-get-template.php');
                 require_once(dirname(__FILE__) . '/global/taxonomy-listing.php');
 
                 /*Single Product*/
